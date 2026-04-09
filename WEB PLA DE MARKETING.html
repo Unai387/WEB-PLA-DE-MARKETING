@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Servicio Técnico Informático a Domicilio S.L.</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --accent:#2563a8;
+  --accent-light:#e8f0fb;
+  --accent-mid:#4a82c4;
+  --text:#111827;
+  --text-muted:#6b7280;
+  --bg:#ffffff;
+  --bg2:#f9fafb;
+  --border:#e5e7eb;
+  --radius:6px;
+}
+body{font-family:'Georgia',serif;color:var(--text);background:var(--bg);line-height:1.7;}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:0.9rem 5rem;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.logo-nav img{height:48px;width:auto;}
+nav ul{list-style:none;display:flex;gap:2.5rem;align-items:center;}
+nav a{text-decoration:none;font-size:13px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;letter-spacing:0.3px;}
+nav a:hover{color:var(--accent);}
+.nav-btn{background:var(--accent);color:#fff !important;padding:0.45rem 1.3rem;border-radius:3px;font-size:13px;}
+.nav-btn:hover{background:#1a4f8a !important;}
+
+/* HERO */
+.hero{border-bottom:1px solid var(--border);background:var(--bg2);}
+.hero-inner{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:0;max-width:1100px;margin:0 auto;padding:5rem 2rem;}
+.hero-text{padding-right:4rem;}
+.hero-label{font-family:'Segoe UI',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;}
+.hero-text h1{font-size:36px;font-weight:400;line-height:1.3;margin-bottom:1.25rem;color:var(--text);}
+.hero-text h1 strong{font-weight:700;color:var(--accent);}
+.hero-text .eslogan{font-size:15px;color:var(--text-muted);font-style:italic;margin-bottom:1.25rem;padding-left:1rem;border-left:2px solid var(--accent);}
+.hero-text p{font-size:14px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;line-height:1.8;margin-bottom:2rem;}
+.hero-btns{display:flex;gap:0.75rem;}
+.btn-primary{background:var(--accent);color:#fff;padding:0.7rem 1.75rem;border-radius:3px;font-size:13px;font-family:'Segoe UI',sans-serif;font-weight:600;border:none;cursor:pointer;letter-spacing:0.3px;}
+.btn-primary:hover{background:#1a4f8a;}
+.btn-secondary{background:#fff;color:var(--accent);padding:0.7rem 1.75rem;border-radius:3px;font-size:13px;font-family:'Segoe UI',sans-serif;font-weight:600;border:1px solid var(--accent);cursor:pointer;}
+.btn-secondary:hover{background:var(--accent-light);}
+.hero-visual{display:flex;justify-content:center;align-items:center;padding:2rem;}
+.hero-visual img{max-width:280px;width:100%;height:auto;}
+
+/* STATS BAR */
+.stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#fff;}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);padding:0;}
+.stat-item{text-align:center;padding:1.75rem 1rem;border-right:1px solid var(--border);}
+.stat-item:last-child{border-right:none;}
+.stat-item .num{font-size:24px;font-weight:700;color:var(--accent);font-family:'Segoe UI',sans-serif;}
+.stat-item .lbl{font-size:12px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;margin-top:3px;letter-spacing:0.2px;}
+
+/* SECCIÓN SERVICIOS */
+.servicios{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
+.section-header{margin-bottom:2.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border);}
+.section-header h2{font-size:22px;font-weight:400;letter-spacing:-0.2px;}
+.section-header h2 span{color:var(--accent);font-weight:700;}
+.section-header p{font-size:13px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;margin-top:0.4rem;}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);}
+.card{background:#fff;padding:1.75rem;transition:background 0.2s;}
+.card:hover{background:var(--accent-light);}
+.card-icon{width:36px;height:36px;border-radius:4px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.card h3{font-size:14px;font-weight:700;font-family:'Segoe UI',sans-serif;margin-bottom:0.5rem;color:var(--text);}
+.card p{font-size:13px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;line-height:1.7;}
+svg.icon{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* PRECIOS */
+.precios-section{background:var(--bg2);padding:5rem 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.precios-inner{max-width:1100px;margin:0 auto;}
+.precio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:2.5rem;}
+.precio-card{background:#fff;padding:2rem 1.5rem;text-align:center;transition:background 0.2s;}
+.precio-card:hover{background:var(--accent-light);}
+.precio-card.destacado{background:var(--accent);color:#fff;}
+.precio-card.destacado h3{color:rgba(255,255,255,0.8);}
+.precio-card.destacado .precio-num{color:#fff;}
+.precio-card.destacado p{color:rgba(255,255,255,0.75);}
+.badge{font-size:10px;background:rgba(255,255,255,0.2);color:#fff;padding:3px 10px;border-radius:2px;display:inline-block;margin-bottom:0.75rem;font-family:'Segoe UI',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+.precio-card h3{font-size:13px;font-weight:400;color:var(--text-muted);font-family:'Segoe UI',sans-serif;margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.5px;}
+.precio-num{font-size:32px;font-weight:700;color:var(--accent);font-family:'Segoe UI',sans-serif;margin:0.25rem 0 0.5rem;letter-spacing:-1px;}
+.precio-card p{font-size:12px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;}
+.precio-nota{font-size:12px;color:var(--text-muted);text-align:center;margin-top:1.5rem;font-family:'Segoe UI',sans-serif;font-style:italic;}
+
+/* NOSOTROS */
+.nosotros{padding:5rem 2rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.nosotros-text p.desc{font-size:14px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;line-height:1.8;margin:1.25rem 0 2rem;}
+.team{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);}
+.team-member{display:flex;align-items:center;gap:1rem;background:#fff;padding:1rem 1.25rem;}
+.avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;font-family:'Segoe UI',sans-serif;flex-shrink:0;}
+.av1{background:var(--accent-light);color:var(--accent);}
+.av2{background:#e6f1fb;color:#185FA5;}
+.team-member .info p{font-size:13px;font-weight:600;font-family:'Segoe UI',sans-serif;}
+.team-member .info span{font-size:12px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;}
+.nosotros-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);align-self:start;}
+.stat-box{background:#fff;padding:1.5rem;text-align:center;}
+.stat-box .num{font-size:22px;font-weight:700;color:var(--accent);font-family:'Segoe UI',sans-serif;}
+.stat-box .lbl{font-size:11px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;margin-top:4px;text-transform:uppercase;letter-spacing:0.5px;}
+
+/* CONTACTO */
+.contacto{background:var(--accent);padding:5rem 2rem;}
+.contacto-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:center;}
+.contacto-text h2{font-size:28px;font-weight:400;color:#fff;margin-bottom:0.75rem;}
+.contacto-text h2 strong{font-weight:700;}
+.contacto-text p.sub{font-size:14px;color:rgba(255,255,255,0.7);font-family:'Segoe UI',sans-serif;margin-bottom:2.5rem;}
+.contact-list{display:flex;flex-direction:column;gap:0;margin-bottom:2rem;border:1px solid rgba(255,255,255,0.2);}
+.contact-list .item{display:flex;align-items:center;gap:1rem;padding:0.85rem 1.1rem;border-bottom:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);}
+.contact-list .item:last-child{border-bottom:none;}
+.contact-list .item strong{font-size:11px;font-weight:600;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.8px;font-family:'Segoe UI',sans-serif;min-width:65px;}
+.contact-list .item span{font-size:13px;color:#fff;font-family:'Segoe UI',sans-serif;}
+.btn-white{background:#fff;color:var(--accent);padding:0.75rem 2rem;border-radius:3px;font-size:13px;font-family:'Segoe UI',sans-serif;font-weight:700;border:none;cursor:pointer;letter-spacing:0.3px;}
+.btn-white:hover{background:#f0f5ff;}
+.contacto-logo{display:flex;flex-direction:column;align-items:center;gap:1.5rem;text-align:center;}
+.contacto-logo img{max-width:200px;width:100%;height:auto;filter:brightness(0) invert(1);opacity:0.85;}
+.contacto-logo p{font-size:12px;color:rgba(255,255,255,0.5);font-family:'Segoe UI',sans-serif;line-height:1.6;}
+
+/* FOOTER */
+footer{padding:1.5rem 5rem;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;}
+footer p{font-size:12px;color:var(--text-muted);font-family:'Segoe UI',sans-serif;}
+footer img{height:30px;width:auto;opacity:0.5;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-nav">
+    <img src="/home/smx2b/Imatges/Captures de pantalla/Captura de pantalla de 2026-04-09 12-42-32.png" alt="Logo"/>
+  </div>
+  <ul>
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Precios</a></li>
+    <li><a href="#">Nosotros</a></li>
+    <li><a href="#" class="nav-btn" onclick="document.querySelector('.contacto').scrollIntoView({behavior:'smooth'});return false;">Contacto</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-label">Servicio Técnico Profesional</p>
+      <h1>Tu ordenador reparado,<br><strong>en tu propia casa</strong></h1>
+      <p class="eslogan">"Rápido, cercano y de confianza — donde tú estés."</p>
+      <p>Servicio técnico informático a domicilio en 24-48h. Sin colas, sin esperas, sin desplazarte. Nos encargamos nosotros.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.querySelector('.contacto').scrollIntoView({behavior:'smooth'})">Solicitar servicio</button>
+        <button class="btn-secondary" onclick="document.querySelector('.precios-section').scrollIntoView({behavior:'smooth'})">Consultar precios</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="/home/smx2b/Imatges/Captures de pantalla/Captura de pantalla de 2026-04-09 12-42-32.png" alt="Logo"/>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="num">24–48h</div><div class="lbl">Tiempo de respuesta</div></div>
+    <div class="stat-item"><div class="num">100%</div><div class="lbl">Servicio a domicilio</div></div>
+    <div class="stat-item"><div class="num">0 €</div><div class="lbl">Si no lo resolvemos</div></div>
+    <div class="stat-item"><div class="num">RGPD</div><div class="lbl">Confidencialidad garantizada</div></div>
+  </div>
+</div>
+
+<div class="servicios">
+  <div class="section-header">
+    <h2>Nuestros <span>servicios</span></h2>
+    <p>Todo lo que necesita su equipo, en su domicilio o empresa</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <h3>Reparación a domicilio</h3>
+      <p>Hardware y software: virus, malware, pantalla, RAM, disco duro, batería, teclado y más. Si no podemos resolverlo in situ, nos llevamos el equipo y dejamos un portátil de préstamo.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+      <h3>Mantenimiento para empresas</h3>
+      <p>Contrato mensual con revisiones preventivas, actualizaciones, copias de seguridad y soporte prioritario. Para autónomos y pymes sin IT propio.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <h3>Asesoramiento técnico</h3>
+      <p>Ayuda para comprar el equipo adecuado, configuración inicial, migración de datos e instalación de programas esenciales.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>Soporte remoto</h3>
+      <p>Para incidencias que no requieren presencia física. Conexión segura al equipo del cliente. Tarifa reducida respecto al servicio presencial.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Formación a domicilio</h3>
+      <p>Clases individuales para personas mayores o con poca experiencia digital. Internet, correo, videollamadas, ofimática y seguridad básica.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+      <h3>Recuperación de datos</h3>
+      <p>Rescate de archivos borrados, discos dañados o formateados. Fotos, documentos y vídeos de discos duros, pendrives y tarjetas de memoria.</p>
+    </div>
+  </div>
+</div>
+
+<div class="precios-section">
+  <div class="precios-inner">
+    <div class="section-header">
+      <h2>Tarifas y <span>precios</span></h2>
+      <p>Tarifas claras y transparentes, sin costes ocultos</p>
+    </div>
+    <div class="precio-grid">
+      <div class="precio-card">
+        <h3>Desplazamiento</h3>
+        <div class="precio-num">25 €</div>
+        <p>Por cada visita a domicilio</p>
+      </div>
+      <div class="precio-card destacado">
+        <div class="badge">Más solicitado</div>
+        <h3>Hora de trabajo</h3>
+        <div class="precio-num">40 €/h</div>
+        <p>Diagnóstico básico gratuito</p>
+      </div>
+      <div class="precio-card">
+        <h3>Mantenimiento empresa</h3>
+        <div class="precio-num">200 €</div>
+        <p>Contrato mensual desde</p>
+      </div>
+      <div class="precio-card">
+        <h3>Mayores de 65 años</h3>
+        <div class="precio-num">–25%</div>
+        <p>Descuento en todos los servicios</p>
+      </div>
+    </div>
+    <p class="precio-nota">No cobramos si no resolvemos el problema. Garantía en todas las reparaciones.</p>
+  </div>
+</div>
+
+<div class="nosotros" style="border-bottom:1px solid var(--border);">
+  <div class="nosotros-text">
+    <div class="section-header">
+      <h2>Quiénes <span>somos</span></h2>
+    </div>
+    <p class="desc">Somos Angel Pérez y Unai Meneses, dos técnicos formados en Sistemas Microinformáticos y Redes (SMX). Fundamos esta empresa para ofrecer un servicio cercano, rápido y honesto que las grandes superficies no pueden dar.</p>
+    <div class="team">
+      <div class="team-member">
+        <div class="avatar av1">AP</div>
+        <div class="info"><p>Angel Pérez</p><span>CEO · Marketing</span></div>
+      </div>
+      <div class="team-member">
+        <div class="avatar av2">UM</div>
+        <div class="info"><p>Unai Meneses</p><span>CEO · Producción</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="nosotros-stats">
+    <div class="stat-box"><div class="num">24–48h</div><div class="lbl">Tiempo de respuesta</div></div>
+    <div class="stat-box"><div class="num">100%</div><div class="lbl">A domicilio</div></div>
+    <div class="stat-box"><div class="num">0 €</div><div class="lbl">Sin solución</div></div>
+    <div class="stat-box"><div class="num">RGPD</div><div class="lbl">Datos protegidos</div></div>
+  </div>
+</div>
+
+<div class="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-text">
+      <h2>¿Necesita ayuda<br><strong>con su equipo?</strong></h2>
+      <p class="sub">Contáctenos y le atendemos en menos de 24 horas.</p>
+      <div class="contact-list">
+        <div class="item"><strong>WhatsApp</strong><span>612 345 678</span></div>
+        <div class="item"><strong>Unai</strong><span>umeneses@elpuig.xeill.net</span></div>
+        <div class="item"><strong>Angel</strong><span>aperezc@elpuig.xeill.net</span></div>
+        <div class="item"><strong>Horario</strong><span>Lunes a sábado, 9:00 – 20:00 h</span></div>
+      </div>
+      <button class="btn-white">Contactar ahora</button>
+    </div>
+    <div class="contacto-logo">
+      <img src="/home/smx2b/Imatges/Captures de pantalla/Captura de pantalla de 2026-04-09 12-42-32.png" alt="Logo"/>
+      <p>Servicio Técnico Informático<br>a Domicilio S.L.<br>Barcelona · Desde 2026</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Servicio Técnico Informático a Domicilio S.L. · Todos los derechos reservados</p>
+  <img src="/home/smx2b/Imatges/Captures de pantalla/Captura de pantalla de 2026-04-09 12-42-32.png" alt="Logo"/>
+</footer>
+
+</body>
+</html>
